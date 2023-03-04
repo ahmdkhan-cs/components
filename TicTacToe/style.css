@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#board-container{
+    display: none;
+}
+
+.players{
+    margin: 0 0 12px 0;
+}
+
+.board{
+    height: 480px;
+    width: 480px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.box{
+    background-color: rgba(255, 255, 255, 1.0);
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    width: 160px;
+}
+
+.box:hover{
+    background-color: rgb(200, 200, 200, 1.0);
+    cursor: pointer;
+}
+
+#box0{
+    border-top-left-radius: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 1.0);
+    border-left: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+#box1{
+    border-top: 1px solid rgba(0, 0, 0, 1.0);
+    border-left: 1px solid rgba(0, 0, 0, 1.0);
+    border-right: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+#box2{
+    border-top-right-radius: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 1.0);
+    border-right: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+#box3{
+    border-top: 1px solid rgba(0, 0, 0, 1.0);
+    border-left: 1px solid rgba(0, 0, 0, 1.0);
+    border-bottom: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+#box4{
+    border: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+#box5{
+    border-top: 1px solid rgba(0, 0, 0, 1.0);
+    border-right: 1px solid rgba(0, 0, 0, 1.0);
+    border-bottom: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+#box6{
+    border-bottom-left-radius: 12px;
+    border-left: 1px solid rgba(0, 0, 0, 1.0);
+    border-bottom: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+#box7{
+    border-left: 1px solid rgba(0, 0, 0, 1.0);
+    border-bottom: 1px solid rgba(0, 0, 0, 1.0);
+    border-right: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+#box8{
+    border-bottom-right-radius: 12px;
+    border-right: 1px solid rgba(0, 0, 0, 1.0);
+    border-bottom: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+.btn-center{
+    display: flex;
+    justify-content: center;
+    margin: 12px 0;
+}
+
+.btn{
+    font-size: 1em;
+    padding: 8px;
+    color: rgba(255, 255, 255, 1.0);
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-start{
+    background-color: rgba(52, 152, 219, 1.0);
+    font-size: 3em;
+    padding: 8px 24px;
+}
+
+.btn-start:hover{
+    background-color: rgba(36, 106, 153, 1.0);
+}
+
+.btn-reset{
+    display: none;
+    background-color: rgba(231, 76, 60, 1.0);
+}
+
+.btn-reset:hover{
+    background-color: rgba(162, 53, 42, 1.0);
+}

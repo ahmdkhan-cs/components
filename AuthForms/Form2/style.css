@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+.background{
+    height: 100%;
+    background-color: #27ae60;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 75%);
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    padding: 12px 32px;
+    border-radius: 12px;
+    box-shadow: 0 0 100px rgb(0 0 0 / 40%);
+    width: 90%;
+}
+
+.logo{
+    height: 56px;
+    width: 56px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo > i{
+    font-size: 32px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.form{
+    margin: 86px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form > input{
+    width: 95%;
+    border: 1px solid #eeeeee;
+    padding: 12px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    margin: 0 0 24px 0;
+    box-shadow: 0 0 100px rgb(0 0 0 / 20%);
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.5s;
+}
+
+.form > input:focus, .form > input:hover{
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.form > button{
+    width: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #27ae60;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 100px rgb(0 0 0 / 20%);
+}
+
+
+.form > button:hover{
+    background-color: #1f8b4d;
+    transition: all 0.5s;
+}
+
+.question{
+    margin: 24px 0 0 0;
+    padding: 12px;
+}
+
+.question > p{
+    color: #333333;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+.question > p > a{
+    color: #27ae60;
+    text-decoration: none;
+}
+
+
+@media (width >= 500px){
+    .container{
+        width: 400px;
+    }
+}

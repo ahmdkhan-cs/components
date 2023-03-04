@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero-container">
+            <p class="heading">Drawing Board</p>
+        </div>
+        <div class="error-container">
+            <p class="error-text" id="error"></p>    
+        </div>
+        <div class="input-container">
+            <input type="number" name="rows" id="rows" class="input-number" placeholder="Number of rows">
+            <input type="number" name="columns" id="columns" class="input-number" placeholder="Number of columns">
+        </div>
+        <div class="btn-container">
+            <button type="button" class="btn" id="generate-random-grid">Generate Random Board</button>
+            <button type="button" class="btn" id="generate-grid">Generate Board</button>
+            <button type="button" class="btn" id="erase-grid">Erase Board</button>
+            <input type="color" class="color-picker" name="color" id="color">
+            <button type="button" class="btn" id="draw">Draw</button>
+            <button type="button" class="btn" id="erase">Erase</button>
+        </div>
+        <div class="grid-container" id="grid">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

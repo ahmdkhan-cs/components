@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Impossible to click</title>
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+        crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <button class="btn btn-primary position-absolute text-center" id="impossible-btn" style="height: 40px; width: 250px;">Click me if you can!</button>
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"
+        ></script>
+        <script>
+            const btn = document.getElementById('impossible-btn');
+            const text = [
+                "I am here",
+                "Click me if you can",
+                "Catch me",
+                "Not this time",
+                "Go on, click me",
+                "Easy to see, hard to catch"
+            ];
+
+            const btnColor = [
+                "btn-primary",
+                "btn-secondary",
+                "btn-success",
+                "btn-danger",
+                "btn-warning",
+                "btn-info",
+                "btn-dark"
+            ]
+            btn.addEventListener("mouseover", (e) => {
+                e.preventDefault();
+
+                // Randomize text
+                const randomText = generateRandomNumber(text.length - 1);
+                let btnText = btn.innerText;
+                let newText = text[randomText];
+                while(true){
+                    if(btnText === newText){
+                        newText = text[generateRandomNumber(text.length - 1)];
+                    } else {
+                        break;
+                    }
+                }
+                
+                // Randomize color
+                const randomColor = generateRandomNumber(btnColor.length - 1);
+                let btnClass = '';
+                for(let c of btn.classList) {
+                    if(btnColor.includes(c)) {
+                        btnClass = c;
+                        btn.classList.remove(c);
+                        break;
+                    }
+                }
+
+                let newClass = btnColor[randomColor];
+                while(true){
+                    if(btnClass === newClass){
+                        newClass = btnColor[generateRandomNumber(btnColor.length - 1)];
+                    } else {
+                        break;
+                    }
+                }
+
+                // Randomize position
+                const randomWH = generateRandomWH();
+
+                // Setting btn properties
+                btn.innerText = newText;
+                btn.classList.add(newClass);
+                btn.style.left = randomWH.width+'px';
+                btn.style.top = randomWH.height+'px';
+            })
+
+            function generateRandomWH(){
+                let randomHeight = generateRandomNumber(window.innerHeight) - 40;
+                let randomWidth = generateRandomNumber(window.innerWidth) - 250;
+
+                if(randomHeight > window.innerHeight){
+                    randomHeight = window.innerHeight - 40;
+                }
+
+                if(randomWidth > window.innerWidth){
+                    randomWidth = window.innerWidth - 250;
+                }
+
+                if(randomHeight < 0){
+                    randomHeight = 0;
+                }
+
+                if(randomWidth < 0){
+                    randomWidth = 0;
+                }
+                return {
+                    height: randomHeight,
+                    width: randomWidth
+                }
+            }
+
+            function generateRandomNumber(num){
+                return Math.round(Math.random() * num);
+            }
+        </script>
+    </body>
+</html>
