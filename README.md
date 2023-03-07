@@ -10,6 +10,7 @@
 + Search Bars.
 + Image Slider.
 + Tic Tac Toe Game.
++ Random Shapes Generator.
 
 
 ## Technologies used
